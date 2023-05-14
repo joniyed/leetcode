@@ -1,6 +1,3 @@
-import java.util.HashMap;
-import java.util.Map;
-
 /**
  * Created by IntelliJ IDEA.
  * User: joniyed
@@ -10,8 +7,9 @@ import java.util.Map;
  */
 public class RomanToInteger {
 
-    public static int romanToInt(String s) {
-        int[] table = new int[256];
+    public static final int[] table = new int[256];
+
+    static {
         table['I'] = 1;
         table['V'] = 5;
         table['X'] = 10;
@@ -19,6 +17,9 @@ public class RomanToInteger {
         table['C'] = 100;
         table['D'] = 500;
         table['M'] = 1000;
+    }
+
+    public static int romanToInt(String s) {
 
         int value = 0;
         int prev = 0;
@@ -26,7 +27,7 @@ public class RomanToInteger {
         for (char c : s.toCharArray()) {
             current = table[c];
             if (prev < current) {
-                value -= 2 * prev;
+                value -= prev + prev;
             }
             value += current;
             prev = current;
@@ -35,7 +36,7 @@ public class RomanToInteger {
     }
 
     public static void main(String[] args) {
-        String s = "LVIII";
+        String s = "MCMXCIV";
         System.out.println(romanToInt(s));
     }
 }
