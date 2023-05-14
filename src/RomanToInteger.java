@@ -1,3 +1,6 @@
+import java.util.HashMap;
+import java.util.Map;
+
 /**
  * Created by IntelliJ IDEA.
  * User: joniyed
@@ -8,33 +11,20 @@
 public class RomanToInteger {
 
     public static int romanToInt(String s) {
+        int[] table = new int[256];
+        table['I'] = 1;
+        table['V'] = 5;
+        table['X'] = 10;
+        table['L'] = 50;
+        table['C'] = 100;
+        table['D'] = 500;
+        table['M'] = 1000;
+
         int value = 0;
         int prev = 0;
         int current;
         for (char c : s.toCharArray()) {
-            switch (String.valueOf(c)) {
-                case "I":
-                    current = 1;
-                    break;
-                case "V":
-                    current = 5;
-                    break;
-                case "X":
-                    current = 10;
-                    break;
-                case "L":
-                    current = 50;
-                    break;
-                case "C":
-                    current = 100;
-                    break;
-                case "D":
-                    current = 500;
-                    break;
-                default:
-                    current = 1000;
-                    break;
-            }
+            current = table[c];
             if (prev < current) {
                 value -= 2 * prev;
             }
