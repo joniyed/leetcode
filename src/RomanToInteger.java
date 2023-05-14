@@ -7,7 +7,7 @@
  */
 public class RomanToInteger {
 
-    public static int romanToInt(String s){
+    public static int romanToInt(String s) {
         int value = 0;
         int prev = 0;
         int current;
@@ -36,7 +36,7 @@ public class RomanToInteger {
                     break;
             }
             if (prev < current) {
-                value -=  prev;
+                value -= 2 * prev;
             }
             value += current;
             prev = current;
