@@ -62,21 +62,18 @@ public class LongestCommonPrefix {
     public static String longestCommonPrefix(String[] arr) {
         Arrays.sort(arr);
         String str1 = arr[0];
-        String str2 = arr[arr.length-1];
-        return find(str1,str2);
+        String str2 = arr[arr.length - 1];
+        return find(str1, str2);
     }
 
     public static void main(String[] args) {
-        String[] arr = new String[]{"aaa", "aa", "aaa"};
-        System.out.println(longestCommonPrefix(arr));
-        /* Note
-        * With Trie Data Structure
-        * */
-//        Trie trie = new Trie();
-//        for (String word : arr) {
-//            trie.insert(word);
-//        }
-//
-//        System.out.println(trie.getLongestCommonPrefix()); // "ab"
+        String[] strs = new String[]{"aaa", "aa", "aaa"};
+        String prefix = strs[0];
+        for(int i = 1; i < strs.length; i++) {
+            while(!strs[i].startsWith(prefix)) {
+                prefix = prefix.substring(0,prefix.length()-1);
+            }
+        }
+        System.out.println(prefix);
     }
 }
