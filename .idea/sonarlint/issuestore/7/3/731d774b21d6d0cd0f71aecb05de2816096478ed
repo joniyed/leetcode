@@ -1,0 +1,10 @@
+
+>
+java:S1643"Use a StringBuilder instead.(¿ƒÓşÿÿÿÿ8†³ Í‚1
+F
+java:S2129"$Remove this "BigInteger" constructor(›ÿ¶ãøÿÿÿÿ8Û½¶Ñ‚1
+Y
+java:S1854 "7Remove this useless assignment to local variable "arr".(°š¶øÿÿÿÿ8ıÖ·Ñ‚1
+J
+java:S1481 "(Remove this unused "arr" local variable.(°š¶øÿÿÿÿ8‚×·Ñ‚1
+U	java:S106$"9Replace this use of System.out or System.err by a logger.(óŒ—È8™³ Í‚1
